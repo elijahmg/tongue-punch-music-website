@@ -1,0 +1,6 @@
+@import "tailwindcss";
+
+
+@theme {
+    --color-fuchsia-300: #8f5a91;
+}

@@ -1,0 +1,49 @@
+---
+interface Concert {
+  city: string;
+  venue: string;
+  date: string;
+  time: string;
+  venueHref: string;
+  ticketInfo?: string;
+}
+
+const concerts: Concert[] = [
+  {
+    city: 'Prague',
+    venue: 'U Rarasku',
+    venueHref: 'https://maps.app.goo.gl/H6TEXYk18UN5Apjw5',
+    date: '07/03/2026',
+    time: '19:30',
+    ticketInfo: 'Free'
+  }
+]
+---
+
+<section id="live" class="min-h-screen py-20 px-8">
+  <h2 class="text-white text-5xl md:text-8xl tracking-widest uppercase text-center mb-12">Live</h2>
+
+  <ul class="max-w-4xl mx-auto list-none m-0 p-0 flex flex-col gap-6 tracking-widest">
+    {concerts.map((concert) => (
+      <li
+        class="bg-[#13201D]/60 rounded-lg p-6 flex flex-col md:flex-row md:items-center md:justify-between gap-4 text-white text-2xl">
+        <div class="flex flex-col md:flex-row gap-2 md:gap-14 text-white/90">
+          <div class="flex gap-4">
+            <span class="">{concert.date}</span>
+            <span class="font-medium">{concert.time}</span>
+          </div>
+          <div class="flex gap-4 flex-col md:flex-row">
+            <a href={concert.venueHref} target="_blank" rel="noopener noreferrer"
+               class="text-white/70 hover:text-white transition-colors">{concert.venue}</a>
+            <span class="font-bold tracking-wide">{concert.city}</span>
+          </div>
+        </div>
+        {concert.ticketInfo && (
+          <span class="bg-white/20 text-white px-6 py-2 rounded-md font-bold text-lg">
+            {concert.ticketInfo}
+          </span>
+        )}
+      </li>
+    ))}
+  </ul>
+</section>

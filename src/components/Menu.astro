@@ -1,0 +1,77 @@
+---
+const textStyle = 'no-underline text-inherit font-medium text-xl tracking-[0.25em] transition-opacity duration-200 ease-in-out hover:opacity-70 uppercase text-white underline'
+---
+
+<nav class="p-4 flex justify-between md:justify-center items-center fixed top-0 left-0 right-0 z-50">
+  <!-- Logo (visible on mobile) -->
+  <span class="md:hidden text-white font-['Anton_SC'] text-xl tracking-widest uppercase">Tongue Punch</span>
+
+  <!-- Burger button (visible on mobile) -->
+  <button id="burger" class="md:hidden flex flex-col justify-center items-center gap-1.5 z-50" aria-label="Toggle menu">
+    <span class="block w-6 h-0.5 bg-white transition-transform duration-300" id="line1"></span>
+    <span class="block w-6 h-0.5 bg-white transition-opacity duration-300" id="line2"></span>
+    <span class="block w-6 h-0.5 bg-white transition-transform duration-300" id="line3"></span>
+  </button>
+
+  <!-- Desktop menu -->
+  <ul class="hidden md:flex gap-16 list-none m-0 p-0">
+    <li><a class={textStyle} href="#">Home</a></li>
+    <li><a class={textStyle} href="#live">Live</a></li>
+    <li><a class={textStyle} href="#music">Music</a></li>
+    <li><a class={textStyle} href="#media">Media</a></li>
+  </ul>
+
+  <!-- Mobile menu (hidden by default) -->
+  <ul id="mobile-menu"
+      class="fixed inset-0 bg-[#13201D] flex-col items-center justify-center gap-8 list-none m-0 p-0 hidden">
+    <li><a class={textStyle} href="#">Home</a></li>
+    <li><a class={textStyle} href="#live">Live</a></li>
+    <li><a class={textStyle} href="#music">Music</a></li>
+    <li><a class={textStyle} href="#media">Media</a></li>
+  </ul>
+</nav>
+
+<script>
+  const burger = document.getElementById('burger')
+  const mobileMenu = document.getElementById('mobile-menu')
+  const line1 = document.getElementById('line1')
+  const line2 = document.getElementById('line2')
+  const line3 = document.getElementById('line3')
+
+  burger?.addEventListener('click', () => {
+    const isOpen = mobileMenu?.classList.contains('flex')
+
+    if (isOpen) {
+      mobileMenu?.classList.remove('flex')
+      mobileMenu?.classList.add('hidden')
+      line1?.classList.remove('rotate-45', 'translate-y-2')
+      line2?.classList.remove('opacity-0')
+      line3?.classList.remove('-rotate-45', '-translate-y-2')
+    } else {
+      mobileMenu?.classList.remove('hidden')
+      mobileMenu?.classList.add('flex')
+      line1?.classList.add('rotate-45', 'translate-y-2')
+      line2?.classList.add('opacity-0')
+      line3?.classList.add('-rotate-45', '-translate-y-2')
+    }
+  })
+
+  // Close menu when clicking a link
+  mobileMenu?.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      mobileMenu?.classList.remove('flex')
+      mobileMenu?.classList.add('hidden')
+      line1?.classList.remove('rotate-45', 'translate-y-2')
+      line2?.classList.remove('opacity-0')
+      line3?.classList.remove('-rotate-45', '-translate-y-2')
+    })
+  })
+</script>
+
+<style>
+    nav {
+        background: linear-gradient(180deg, #13201D 25.84%, rgba(19, 32, 29, 0) 100%);
+    }
+
+</style>
+

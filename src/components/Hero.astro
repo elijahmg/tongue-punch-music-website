@@ -1,41 +1,67 @@
+---
+import logo from '../assets/logo_fixed.png'
+---
+
+
 <div id="container">
-		<section id="hero">
-			<span class="text-2xl xs:text-5xl sm:text-6xl md:text-8xl font-bold tracking-[1rem] uppercase text-white">Tongue Punch</span>
-		</section>
+  <section id="hero">
+    <div class="flex items-center justify-center w-full md:mb-45 mt-64 md:mt-0">
+      <img src={logo.src} alt="logo" class="md:w-3/5 animate-fade-in-up" />
+    </div>
+  </section>
 </div>
 
 <style>
-	#background {
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 100%;
-		z-index: -1;
-	}
+    #background {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: -1;
+    }
 
-	#container {
-		height: 100%;
-	}
+    #container {
+        height: 100%;
+    }
 
-	#hero {
-		background-image: url('../assets/band.JPG');
-		background-size: cover;
-		background-position: center;
-		background-repeat: no-repeat;
-		display: flex;
-		align-items: center;
-		flex-direction: column;
-		justify-content: center;
-		padding: 16px;
-		height: 100vh;
-		min-height: -webkit-fill-available;
-	}
+    #hero {
+        background-image: url('../assets/band.JPG');
+        //background-image: url('../assets/band_rar.JPG');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: end;
 
-	@media (max-width: 768px) {
-		#hero {
-			background-position: center top;
-		}
-	}
+        padding: 16px;
+        height: 100vh;
+        min-height: -webkit-fill-available;
+    }
+
+    @media (max-width: 768px) {
+        #hero {
+            background-position: center top;
+
+            justify-content: center;
+        }
+    }
+
+    @keyframes fade-in-up {
+        from {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .animate-fade-in-up {
+        animation: fade-in-up 1s ease-out forwards;
+    }
 
 
 </style>

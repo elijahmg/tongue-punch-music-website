@@ -1,0 +1,11 @@
+[
+  {
+    "id": 1,
+    "city": "Prague",
+    "venue": "U Rarasku",
+    "venueHref": "https://maps.app.goo.gl/H6TEXYk18UN5Apjw5",
+    "date": "07/03/2026",
+    "time": "19:30",
+    "ticketInfo": "Free"
+  }
+]

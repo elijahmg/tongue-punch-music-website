@@ -1,67 +1,102 @@
 ---
-import logo from '../assets/logo_fixed.png'
+import logo from "../assets/logo_fixed.png";
+import band from "../assets/band.JPG";
 ---
 
-
-<div id="container">
-  <section id="hero">
-    <div class="flex items-center justify-center w-full md:mb-45 mt-64 md:mt-0">
-      <img src={logo.src} alt="logo" class="md:w-3/5 animate-fade-in-up" />
+<section
+    id="hero"
+    class="relative h-screen flex flex-col items-center justify-center overflow-hidden"
+>
+    <!-- Background Image with Parallax-ready feel -->
+    <div class="absolute inset-0 z-0">
+        <img
+            src={band.src}
+            alt="Tongue Punch Band"
+            class="w-full h-full object-cover filter brightness-50 contrast-125"
+        />
+        <div
+            class="absolute inset-0 bg-linear-to-t from-brand-black via-transparent to-brand-black/50"
+        >
+        </div>
     </div>
-  </section>
-</div>
+
+    <!-- Content -->
+    <div
+        class="relative z-10 flex flex-col items-center justify-center w-full px-4 text-center"
+    >
+        <div class="mb-8 overflow-hidden">
+            <img
+                src={logo.src}
+                alt="logo"
+                class="w-full max-w-(--breakpoint-md) mx-auto animate-reveal-up"
+            />
+        </div>
+
+        <div
+            class="flex flex-col md:flex-row gap-4 md:gap-8 items-center animate-fade-in delay-500 opacity-0"
+        >
+            <span
+                class="text-brand-accent font-display text-xl md:text-2xl tracking-[0.3em]"
+                >EST. 2024</span
+            >
+            <span class="hidden md:block w-2 h-2 bg-brand-white rotate-45"
+            ></span>
+            <span
+                class="text-brand-white font-display text-xl md:text-2xl tracking-[0.3em]"
+                >ALT ROCK FROM PRAGUE</span
+            >
+        </div>
+    </div>
+
+    <!-- Scroll Indicator -->
+    <!-- <a
+        href="#live"
+        class="absolute bottom-10 left-1/2 -translate-x-1/2 z-10 animate-bounce transition-colors hover:text-brand-accent"
+    >
+        <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="32"
+            height="32"
+            fill="currentColor"
+            viewBox="0 0 256 256"
+        >
+            <path
+                d="M205.66,117.66a8,8,0,0,1-11.32,0L136,59.31V216a8,8,0,0,1-16,0V59.31L61.66,117.66a8,8,0,0,1-11.32-11.32l72-72a8,8,0,0,1,11.32,0l72,72A8,8,0,0,1,205.66,117.66Z"
+                transform="rotate(180 128 128)"></path>
+        </svg>
+    </a> -->
+</section>
 
 <style>
-    #background {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        z-index: -1;
-    }
-
-    #container {
-        height: 100%;
-    }
-
-    #hero {
-        background-image: url('../assets/band.JPG');
-        //background-image: url('../assets/band_rar.JPG');
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-        display: flex;
-        align-items: center;
-        flex-direction: column;
-        justify-content: end;
-
-        padding: 16px;
-        height: 100vh;
-        min-height: -webkit-fill-available;
-    }
-
-    @media (max-width: 768px) {
-        #hero {
-            background-position: center top;
-
-            justify-content: center;
+    @keyframes reveal-up {
+        0% {
+            transform: translateY(100%);
+            clip-path: inset(0 0 100% 0);
+        }
+        100% {
+            transform: translateY(0);
+            clip-path: inset(0 0 0 0);
         }
     }
 
-    @keyframes fade-in-up {
+    @keyframes fade-in {
         from {
             opacity: 0;
-            transform: translateY(30px);
         }
         to {
             opacity: 1;
-            transform: translateY(0);
         }
     }
 
-    .animate-fade-in-up {
-        animation: fade-in-up 1s ease-out forwards;
+    .animate-reveal-up {
+        animation: reveal-up 1.2s cubic-bezier(0.77, 0, 0.175, 1) forwards;
     }
 
+    .animate-fade-in {
+        animation: fade-in 1s ease-out forwards;
+    }
 
+    .delay-500 {
+        animation-delay: 0.8s;
+    }
 </style>

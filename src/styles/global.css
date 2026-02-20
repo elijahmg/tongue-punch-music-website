@@ -1,6 +1,41 @@
 @import "tailwindcss";
 
-
 @theme {
-    --color-fuchsia-300: #8f5a91;
+  --color-brand-black: #191919;
+  --color-brand-white: #f0f0f0;
+  --color-brand-accent: #ca0aff;
+  /* Electric Fuchsia */
+  --color-brand-muted: #1a1a1a;
+
+  --font-display: 'Anton SC', sans-serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+}
+
+@layer base {
+  body {
+    @apply bg-brand-black text-brand-white selection:bg-brand-accent selection:text-brand-black;
+    font-family: var(--font-body);
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  .font-display {
+    font-family: var(--font-display);
+    @apply uppercase tracking-tighter;
+  }
+}
+
+/* Gritty Grain Overlay */
+.grain-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.05;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
 }

@@ -1,17 +1,37 @@
 <!-- Elfsight Instagram Feed | Untitled Instagram Feed -->
+<section id="media" class="relative py-32 px-4 md:px-12 bg-brand-black">
+    <div class="max-w-7xl mx-auto flex flex-col items-center">
+        <div class="text-center mb-16 md:mb-24">
+            <h2
+                class="text-brand-white text-7xl md:text-[10rem] leading-[0.8] mb-4"
+            >
+                MEDIA
+            </h2>
+            <p
+                class="text-brand-accent font-display text-xl tracking-[0.5em] uppercase"
+            >
+                Follow our journey
+            </p>
+        </div>
 
-<section id="media" class="min-h-screen flex flex-col items-center mx-auto max-w-360 px-8 py-20 w-full">
-  <h2 class="text-white text-5xl md:text-8xl tracking-widest uppercase text-center mb-12">Instagram</h2>
-  <div class="elfsight-app-f367476e-9edd-4cec-b2ba-749e3947d738" data-elfsight-app-lazy/>
+        <div class="w-full bg-brand-muted/50 p-4 border border-brand-white/5">
+            <div
+                class="elfsight-app-f367476e-9edd-4cec-b2ba-749e3947d738"
+                data-elfsight-app-lazy
+            >
+            </div>
+        </div>
+    </div>
 </section>
 
-
-<style>
-
-    #media {
-        .eapps-widget-toolbar {
-            display: none;
-        }
+<style is:global>
+    /* Hide Elfsight branding more reliably */
+    .eapps-widget-toolbar {
+        display: none !important;
     }
 
+    /* Force elfsight to match our theme if possible */
+    [class*="InstagramFeed__Component"] {
+        background: transparent !important;
+    }
 </style>

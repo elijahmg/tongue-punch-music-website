@@ -5,30 +5,72 @@ const concerts = await getCollection('gigs')
 
 ---
 
-<section id="live" class="min-h-screen py-20 px-8">
-  <h2 class="text-white text-5xl md:text-8xl tracking-widest uppercase text-center mb-12">Live</h2>
+<section id="live" class="relative py-32 px-4 md:px-12 bg-brand-black overflow-hidden">
+  <!-- Decorative Background Text -->
+  <div class="absolute top-0 left-0 w-full h-full pointer-events-none z-0 overflow-hidden opacity-5 select-none">
+    <div class="font-display text-[30vw] leading-none whitespace-nowrap animate-scroll-text">
+      LIVE LIVE LIVE LIVE LIVE LIVE
+    </div>
+  </div>
 
-  <ul class="max-w-4xl mx-auto list-none m-0 p-0 flex flex-col gap-6 tracking-widest">
-    {concerts.map((concert) => (
-      <li
-        class="bg-[#13201D]/60 rounded-lg p-6 flex flex-col md:flex-row md:items-center md:justify-between gap-4 text-white text-2xl">
-        <div class="flex flex-col md:flex-row gap-2 md:gap-14 text-white/90">
-          <div class="flex gap-4">
-            <span class="">{concert.data.date}</span>
-            <span class="font-medium">{concert.data.time}</span>
+  <div class="relative z-10 max-w-7xl mx-auto">
+    <div class="flex flex-col md:flex-row justify-between items-end mb-16 md:mb-24 px-4">
+      <h2 class="text-brand-white text-7xl md:text-[12rem] leading-[0.8] mb-0">LIVE</h2>
+      <p class="text-brand-accent font-display text-xl md:text-2xl tracking-widest mt-4 md:mt-0">TOUR DATES 2026</p>
+    </div>
+
+    <div class="grid grid-cols-1 gap-4 md:gap-0 border-y border-brand-white/10">
+      {concerts.map((concert, index) => (
+        <a 
+          href={concert.data.venueHref} 
+          target="_blank" 
+          rel="noopener noreferrer"
+          class="group block relative border-b last:border-0 border-brand-white/10 hover:bg-brand-accent transition-colors duration-500"
+        >
+          <div class="flex flex-col md:flex-row md:items-center justify-between p-8 md:p-12 gap-6">
+            <!-- Date & City -->
+            <div class="flex flex-col md:flex-row md:items-baseline gap-2 md:gap-12">
+              <span class="text-brand-white group-hover:text-brand-black font-display text-4xl md:text-6xl transition-colors">
+                {concert.data.date.split('/')[0]}.{concert.data.date.split('/')[1]}
+              </span>
+              <div class="flex flex-col">
+                <span class="text-brand-white group-hover:text-brand-black font-display text-2xl md:text-4xl uppercase transition-colors">
+                  {concert.data.city}
+                </span>
+                <span class="text-brand-white/50 group-hover:text-brand-black/70 font-display text-lg tracking-widest uppercase transition-colors">
+                  {concert.data.venue}
+                </span>
+              </div>
+            </div>
+
+            <!-- Time & Tickets -->
+            <div class="flex items-center justify-between md:justify-end gap-12">
+               <span class="text-brand-white group-hover:text-brand-black font-display text-2xl tracking-widest transition-colors">
+                {concert.data.time}
+              </span>
+              <div class="px-8 py-3 bg-brand-white text-brand-black font-display text-xl uppercase transform group-hover:-rotate-2 transition-transform">
+                {concert.data.ticketInfo || 'Tickets'}
+              </div>
+            </div>
           </div>
-          <div class="flex gap-4 flex-col md:flex-row">
-            <a href={concert.data.venueHref} target="_blank" rel="noopener noreferrer"
-               class="text-white/70 hover:text-white transition-colors">{concert.data.venue}</a>
-            <span class="font-bold tracking-wide">{concert.data.city}</span>
-          </div>
-        </div>
-        {concert.data.ticketInfo && (
-          <span class="bg-white/20 text-white px-6 py-2 rounded-md font-bold text-lg">
-            {concert.data.ticketInfo}
+          
+          <!-- Hover reveal line indices/numbers -->
+          <span class="absolute top-4 left-4 text-brand-white/20 font-mono text-sm">
+            0{index + 1}
           </span>
-        )}
-      </li>
-    ))}
-  </ul>
+        </a>
+      ))}
+    </div>
+  </div>
 </section>
+
+<style>
+  @keyframes scroll-text {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+
+  .animate-scroll-text {
+    animation: scroll-text 40s linear infinite;
+  }
+</style>

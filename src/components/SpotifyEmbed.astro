@@ -8,9 +8,22 @@
   >
   </div>
 
-  <div class="relative z-10 max-w-7xl mx-auto flex flex-col items-center">
-    <div class="text-center mb-16 md:mb-24">
-      <h2 class="text-brand-white text-7xl md:text-[10rem] leading-[0.8] mb-4">
+  <!-- Decorative Background Text -->
+  <div
+    class="absolute top-0 left-0 w-full h-full pointer-events-none z-0 overflow-hidden opacity-5 select-none"
+  >
+    <div
+      class="font-display text-[30vw] leading-none whitespace-nowrap animate-scroll-text"
+    >
+      MUSIC MUSIC MUSIC MUSIC MUSIC MUSIC
+    </div>
+  </div>
+
+  <div class="relative z-10 max-w-7xl mx-auto flex items-center flex-col">
+    <div
+      class="flex flex-col md:flex-row justify-between items-end mb-16 md:mb-24 px-4 md:self-start self-end"
+    >
+      <h2 class="text-brand-white text-7xl md:text-[12rem] leading-[0.8] mb-0">
         MUSIC
       </h2>
     </div>
@@ -18,28 +31,42 @@
     <div class="w-full max-w-4xl relative group">
       <!-- Decorative Frame -->
       <div
-        class="absolute -inset-4 border border-brand-white/10 translate-x-1 translate-y-1 group-hover:translate-x-0 group-hover:translate-y-0 transition-transform duration-500"
+        class="absolute -inset-4 border border-brand-white/20 translate-x-1 translate-y-1 group-hover:translate-x-0 group-hover:translate-y-0 transition-transform duration-500"
       >
       </div>
       <div
-        class="absolute -inset-4 border border-brand-accent/30 -translate-x-1 -translate-y-1 group-hover:translate-x-0 group-hover:translate-y-0 transition-transform duration-500 delay-75"
+        class="absolute -inset-4 border border-brand-accent/40 -translate-x-1 -translate-y-1 group-hover:translate-x-0 group-hover:translate-y-0 transition-transform duration-500 delay-75"
       >
       </div>
 
-      <div class="relative p-1">
+      <div class="relative p-1 mx-auto">
         <iframe
           style="border-radius:0px"
-          src="https://open.spotify.com/embed/artist/4dJ9EnUYna17QoVpH6ObIK?utm_source=generator&theme=0"
+          src="https://open.spotify.com/embed/artist/4dJ9EnUYna17QoVpH6ObIK?utm_source=generator"
           width="100%"
           height="450"
           frameborder="0"
           allowfullscreen=""
           allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
           loading="lazy"
-          class="grayscale hover:grayscale-0 transition-all duration-700"
         >
         </iframe>
       </div>
     </div>
   </div>
 </section>
+
+<style>
+    @keyframes scroll-text {
+        0% {
+            transform: translateX(0);
+        }
+        100% {
+            transform: translateX(-50%);
+        }
+    }
+
+    .animate-scroll-text {
+        animation: scroll-text 40s linear infinite;
+    }
+</style>

@@ -30,14 +30,14 @@ const concerts = await getCollection('gigs')
           <div class="flex flex-col md:flex-row md:items-center justify-between p-8 md:p-12 gap-6">
             <!-- Date & City -->
             <div class="flex flex-col md:flex-row md:items-baseline gap-2 md:gap-12">
-              <span class="text-brand-white group-hover:text-brand-black font-display text-4xl md:text-6xl transition-colors">
+              <span class="text-brand-white  font-display text-4xl md:text-6xl transition-colors">
                 {concert.data.date.split('/')[0]}.{concert.data.date.split('/')[1]}
               </span>
               <div class="flex flex-col">
-                <span class="text-brand-white group-hover:text-brand-black font-display text-2xl md:text-4xl uppercase transition-colors">
+                <span class="text-brand-white  font-display text-2xl md:text-4xl uppercase transition-colors">
                   {concert.data.city}
                 </span>
-                <span class="text-brand-white/50 group-hover:text-brand-black/70 font-display text-lg tracking-widest uppercase transition-colors">
+                <span class="text-brand-white/50  font-display text-lg tracking-widest uppercase transition-colors">
                   {concert.data.venue}
                 </span>
               </div>
@@ -45,7 +45,7 @@ const concerts = await getCollection('gigs')
 
             <!-- Time & Tickets -->
             <div class="flex items-center justify-between md:justify-end gap-12">
-               <span class="text-brand-white group-hover:text-brand-black font-display text-2xl tracking-widest transition-colors">
+               <span class="text-brand-white  font-display text-2xl tracking-widest transition-colors">
                 {concert.data.time}
               </span>
               <div class="px-8 py-3 bg-brand-white text-brand-black font-display text-xl uppercase transform group-hover:-rotate-2 transition-transform">

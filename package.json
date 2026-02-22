@@ -9,9 +9,11 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@astrojs/sitemap": "^3.7.0",
     "@fontsource/anton-sc": "^5.2.7",
     "@tailwindcss/vite": "^4.1.18",
     "astro": "^5.16.15",
+    "astro-seo": "^1.1.0",
     "tailwindcss": "^4.1.18"
   }
 }

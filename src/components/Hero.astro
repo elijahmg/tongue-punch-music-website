@@ -1,6 +1,6 @@
 ---
-import logo from '../assets/logo_fixed.png'
-import band from '../assets/band.JPG'
+import logo from "../assets/logo_fixed.png";
+import band from "../assets/hero.png";
 ---
 
 <section
@@ -21,7 +21,7 @@ import band from '../assets/band.JPG'
   </div>
 
   <!-- Content -->
-  <div
+  <!-- <div
     class="relative z-10 flex flex-col items-center justify-center w-full px-4 text-center"
   >
     <div class="mb-8 overflow-hidden">
@@ -35,16 +35,14 @@ import band from '../assets/band.JPG'
     <div
       class="flex flex-col md:flex-row gap-4 md:gap-8 items-center animate-fade-in delay-500 opacity-0"
     >
-            <span class="hidden md:block w-2 h-2 bg-brand-white rotate-45"
-            ></span>
+      <span class="hidden md:block w-2 h-2 bg-brand-white rotate-45"></span>
       <span
         class="text-brand-white font-display text-xl md:text-2xl tracking-[0.3em]"
-      >ALT ROCK FROM PRAGUE</span
+        >ALT ROCK FROM PRAGUE</span
       >
-      <span class="hidden md:block w-2 h-2 bg-brand-white rotate-45"
-      ></span>
+      <span class="hidden md:block w-2 h-2 bg-brand-white rotate-45"></span>
     </div>
-  </div>
+  </div> -->
 
   <!-- Scroll Indicator -->
   <!-- <a
@@ -66,35 +64,35 @@ import band from '../assets/band.JPG'
 </section>
 
 <style>
-    @keyframes reveal-up {
-        0% {
-            transform: translateY(100%);
-            clip-path: inset(0 0 100% 0);
-        }
-        100% {
-            transform: translateY(0);
-            clip-path: inset(0 0 0 0);
-        }
+  @keyframes reveal-up {
+    0% {
+      transform: translateY(100%);
+      clip-path: inset(0 0 100% 0);
     }
+    100% {
+      transform: translateY(0);
+      clip-path: inset(0 0 0 0);
+    }
+  }
 
-    @keyframes fade-in {
-        from {
-            opacity: 0;
-        }
-        to {
-            opacity: 1;
-        }
+  @keyframes fade-in {
+    from {
+      opacity: 0;
     }
+    to {
+      opacity: 1;
+    }
+  }
 
-    .animate-reveal-up {
-        animation: reveal-up 1.2s cubic-bezier(0.77, 0, 0.175, 1) forwards;
-    }
+  .animate-reveal-up {
+    animation: reveal-up 1.2s cubic-bezier(0.77, 0, 0.175, 1) forwards;
+  }
 
-    .animate-fade-in {
-        animation: fade-in 1s ease-out forwards;
-    }
+  .animate-fade-in {
+    animation: fade-in 1s ease-out forwards;
+  }
 
-    .delay-500 {
-        animation-delay: 0.8s;
-    }
+  .delay-500 {
+    animation-delay: 0.8s;
+  }
 </style>

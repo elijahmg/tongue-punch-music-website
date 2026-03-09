@@ -5,7 +5,7 @@ import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://tonguepunch.com', // Replace with your actual domain later
+  site: 'https://www.tonguepunchmusic.com/', // Replace with your actual domain later
   integrations: [sitemap()],
   vite: {
     plugins: [tailwindcss()]

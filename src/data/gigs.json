@@ -2,19 +2,19 @@
   {
     "id": 1,
     "city": "Prague",
-    "venue": "Gabby's Irish Pub",
-    "venueHref": "https://share.google/X79GvgslrC0p9iRXw",
-    "date": "28/03/2026",
-    "time": "20:00",
-    "ticketInfo": "Free"
-  },
-  {
-    "id": 2,
-    "city": "Prague",
     "venue": "Balbínova poetická hospůdka",
     "venueHref": "https://maps.app.goo.gl/cbL3A7ajA6R3zU4N7",
     "date": "06/06/2026",
     "time": "20:00",
     "ticketInfo": "200 CZK, at the door"
+  },
+  {
+    "id": 2,
+    "city": "Prague",
+    "venue": "Vinohradský pivovar",
+    "venueHref": "https://maps.app.goo.gl/5CoqrADf8warbpdb9",
+    "date": "17/10/2026",
+    "time": "20:00",
+    "ticketInfo": "300 CZK, at the door"
   }
 ]

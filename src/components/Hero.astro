@@ -1,6 +1,7 @@
 ---
 import logo from "../assets/logo_fixed.png";
-import band from "../assets/upscalemedia-transformed.png";
+import band from "../assets/hero.jpg";
+import bandPortrait from "../assets/hero_2_p.jpg";
 ---
 
 <section
@@ -12,12 +13,24 @@ import band from "../assets/upscalemedia-transformed.png";
     <img
       src={band.src}
       alt="Tongue Punch Band"
-      class="w-full h-full object-cover"
+      class="w-full h-full object-cover hidden sm:block"
+    />
+
+    <img
+      src={bandPortrait.src}
+      alt="Tongue Punch Band"
+      class="w-full h-full object-cover sm:hidden"
     />
     <div
       class="absolute inset-0 bg-linear-to-t from-brand-black via-transparent to-brand-black/50"
     >
     </div>
+
+    <img
+      src={logo.src}
+      alt="Tongue Punch Band Logo"
+      class="w-1/2 absolute top-3/5 left-1/2 -translate-1/2 hidden sm:block animate-logo-fade"
+    />
   </div>
 
   <!-- Content -->
@@ -94,5 +107,21 @@ import band from "../assets/upscalemedia-transformed.png";
 
   .delay-500 {
     animation-delay: 0.8s;
+  }
+
+  @keyframes logo-enter {
+    from {
+      opacity: 0;
+      transform: translateY(20%);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-logo-fade {
+    animation: logo-enter 700ms ease-out forwards;
+    opacity: 0;
   }
 </style>

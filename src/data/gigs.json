@@ -11,6 +11,24 @@
   {
     "id": 2,
     "city": "Prague",
+    "venue": "U Rarášků",
+    "venueHref": "https://maps.app.goo.gl/ArudsF5LoVXhQ4s97",
+    "date": "18/07/2026",
+    "time": "19:30",
+    "ticketInfo": "Free"
+  },
+  {
+    "id": 3,
+    "city": "Prague",
+    "venue": "Andělský pivovar",
+    "venueHref": "https://maps.app.goo.gl/T5VmHisCShP3upAC7",
+    "date": "19/07/2026",
+    "time": "19:30",
+    "ticketInfo": "Free"
+  },
+  {
+    "id": 4,
+    "city": "Prague",
     "venue": "Vinohradský pivovar",
     "venueHref": "https://maps.app.goo.gl/5CoqrADf8warbpdb9",
     "date": "17/10/2026",
